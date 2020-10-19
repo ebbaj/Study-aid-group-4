@@ -1,5 +1,4 @@
 /* default elements */
-
 *{
     padding: 0;
     margin: 0;
@@ -19,12 +18,16 @@
     --roboto-regular: 400;
     --roboto-bold:700;
 }
-
 body{
     background: var(--dark-green);
     font-family: var(--roboto);
     
 }
+input:focus, textarea:focus, button:focus{
+    outline: none;
+}
+
+/* Main Styles */
 
 .hero-wrapper{
     width: 40vw;
@@ -56,7 +59,7 @@ body{
     margin: 0 auto;
     background-color: var(--beige);
     color: var(--dark-blue);
-    padding: 1.5rem;
+    padding: 4rem 1.5rem;
 }
 
 .questionaire label {
@@ -65,16 +68,22 @@ body{
     font-size: 1.9rem;
 }
 
-.questionaire input[type="text"] {
-    padding: 0.5rem 1rem;
-    border: 0.3rem solid var(--gold);
+.questionaire input[type=text], .questionaire input[type=number] {
+    padding: 0.7rem 1rem;
+    border: 0.2rem solid var(--gold);
     background-color: var(--beige);
     width: 60%;
     font-size: 1.5rem;
     margin-bottom: 2rem;
+    height: 3.6rem;
+}
+.questionaire input:focus{
+    border: 0.2rem solid var(--brown);
 }
 
-
+.measurement-type{
+    margin-bottom: 2rem;
+}
 .measurement-type label{
     margin-right: 3rem;
 }
@@ -134,5 +143,55 @@ input[type="radio"]:not(:checked) {
 }
 
 .measurement-type p {
-    font-size: 1.9rem
+    font-size: 1.9rem;
+    margin-bottom: 0.8rem;
+}
+
+.week-days input[type="checkbox"]:checked,
+.week-days input[type="checkbox"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+.week-days label{
+    position: relative;
+    padding-left: 2.2rem;
+    cursor: pointer;
+    line-height: 2rem;
+    display: inline-block;
+    font-size: 1.5rem;
+}
+.week-days label:before{
+    content: '';
+    position: absolute;
+    left: 1.3rem;
+    top: -1rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    border: 0.2rem solid var(--gold);
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+.week-days label:first-of-type{
+    padding-left: 0;
+}
+.week-days label:first-of-type::before{
+    left: -1rem;
+}
+/* .week-days label:nth-of-type(2){
+    padding-left: 1.8rem;
+} */
+.week-days label:nth-of-type(2)::before{
+    left: 0.93rem;
+}
+.week-days label:nth-of-type(3){
+    padding-left: 2rem;
+}
+.week-days label:nth-of-type(3)::before{
+    left: 1.4rem;
+}
+.week-days label:nth-of-type(4){
+    padding-left: 2rem;
+}
+.week-days label:nth-of-type(4)::before{
+    left: 1.1rem;
 }
