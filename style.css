@@ -50,7 +50,7 @@ body{
     margin-bottom: 3rem;
 }
 
-.starter-questions{
+.starter-questions, .log-sessions{  /*'log-sessions' is for part 2*/
     height: 60vh;
     width: 30vw;
     margin: 0 auto;
@@ -136,3 +136,7 @@ input[type="radio"]:not(:checked) {
 .measurement-type p {
     font-size: 1.9rem
 }
+
+
+/* Style for index2.html */
+
