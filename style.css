@@ -35,7 +35,7 @@ button{
 .hero-wrapper{
     width: 40vw;
     height: 75vh;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     text-align: center;
     padding: 2rem 0;
 }
