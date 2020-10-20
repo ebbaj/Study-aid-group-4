@@ -24,15 +24,23 @@
 
                 <div class="measurement-type">
                     <p>How do you want to track your goal?</p>
-                    <input type="radio" id="hours" name="radio">
+                    <input type="radio" id="hours" name="radio" onclick="showHours();" >
                     <label for="hours">Hours</label>
-                    <input type="radio" id="pages" name="radio">
+                    <input type="radio" id="pages" name="radio" onclick="showPages();">
                     <label for="pages">Pages</label>
-                    <input type="radio" id="exercises" name="radio">
+                    <input type="radio" id="exercises" name="radio" onclick="showExercises();">
                     <label for="exercises">Exercise</label>
                 </div>
-                <div class="hidden-input">
-                    <label for="measurement-goal">Enter your measurement goal:</label>
+                <div id="hidden-hours" class="hide">
+                    <label for="measurement-goal">Enter the amount of hours:</label>
+                    <input type="number" id="measurement-goal" placeholder="Enter a number" required>
+                </div>
+                <div id="hidden-pages" class="hide">
+                    <label for="measurement-goal">Enter the amount of pages you want to read:</label>
+                    <input type="number" id="measurement-goal" placeholder="Enter a number" required>
+                </div>
+                <div id="hidden-exercises" class="hide">
+                    <label for="measurement-goal">Enter the number of exercises you want to practice</label>
                     <input type="number" id="measurement-goal" placeholder="Enter a number" required>
                 </div>
                 <div class="week-days">
