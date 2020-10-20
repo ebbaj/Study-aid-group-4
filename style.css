@@ -209,6 +209,10 @@ input[type="checkbox"]:not(:checked) {
     background-color: var(--gold);
 }
 
+.hidden-input{
+    display: none;
+}
+
 
 .submit{
     width: 60%;
