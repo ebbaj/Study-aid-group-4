@@ -331,7 +331,7 @@ input[type="radio"]:not(:checked) {
 
 .progress-bar {
   background-color: var(--gold);
-  color: white;
+  color: var(--dark-blue);
   border-radius: 60px;
   font-size: 1.2rem;
   height: 20px;
