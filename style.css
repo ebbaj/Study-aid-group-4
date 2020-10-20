@@ -320,3 +320,23 @@ input[type="radio"]:not(:checked) {
 .submit-session:hover {
   border-color: var(--brown);
 }
+
+.progress-container {
+  height: 20px;
+  width: 90vw;
+  margin: 0 auto;
+  background-color: var(--dark-blue);
+  border-radius: 60px;
+}
+
+.progress-bar {
+  background-color: var(--gold);
+  color: white;
+  border-radius: 60px;
+  font-size: 1.2rem;
+  height: 20px;
+  width: 20%;
+  text-align: center;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
