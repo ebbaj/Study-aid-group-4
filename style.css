@@ -1,187 +1,192 @@
 /* default elements */
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-size: 62.5%;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
 }
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
-:root{
-    --dark-green: #15616D;
-    --beige:#FFECD1;
-    --dark-blue:#031e32;
-    --gold:#FF7D00;
-    --brown:#78290F;
+:root {
+  --dark-green: #15616d;
+  --beige: #ffecd1;
+  --dark-blue: #031e32;
+  --gold: #ff7d00;
+  --brown: #78290f;
 
-    --roboto: 'Roboto', sans-serif;
-    --roboto-regular: 400;
-    --roboto-bold:700;
+  --roboto: "Roboto", sans-serif;
+  --roboto-regular: 400;
+  --roboto-bold: 700;
 }
-body{
-    background: var(--dark-green);
-    font-family: var(--roboto);
-    
+body {
+  background: var(--dark-green);
+  font-family: var(--roboto);
 }
-input:focus, textarea:focus, button:focus{
-    outline: none;
+input:focus,
+textarea:focus,
+button:focus {
+  outline: none;
 }
-button{
-    cursor: pointer;
+button {
+  cursor: pointer;
 }
 
 /* Main Styles */
 
-.hero-wrapper{
-    width: 40vw;
-    height: 75vh;
-    margin: 0 auto;
-    text-align: center;
-    padding: 2rem 0;
+.hero-wrapper {
+  width: 40vw;
+  height: 75vh;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem 0;
 }
 
-.hero-wrapper h1{
-    color: var(--gold);
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-weight: var(--roboto-bold);
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: var(--dark-blue);
-    font-size:5.6rem;
-    margin-bottom: 1.5rem;
+.hero-wrapper h1,
+.heading-wrapper h1 {
+  color: var(--gold);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-weight: var(--roboto-bold);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--dark-blue);
+  font-size: 5.6rem;
+  margin-bottom: 1.5rem;
 }
-.hero-wrapper p{
-    color: var(--dark-blue);
-    font-size: 1.9rem;
-    line-height: 1.34;
-    margin-bottom: 3rem;
-    font-weight: var(--roboto-bold);
+.hero-wrapper p,
+.heading-wrapper p {
+  color: var(--dark-blue);
+  font-size: 1.9rem;
+  line-height: 1.34;
+  margin-bottom: 3rem;
+  font-weight: var(--roboto-bold);
 }
 
-.starter-questions{
-    height: 49rem;
-    width: 34vw;
-    margin: 0 auto 5rem;
-    background-color: var(--beige);
-    color: var(--dark-blue);
-    padding: 4rem 1.5rem;
+.starter-questions {
+  height: 49rem;
+  width: 34vw;
+  margin: 0 auto 5rem;
+  background-color: var(--beige);
+  color: var(--dark-blue);
+  padding: 4rem 1.5rem;
 }
 
 .questionaire label {
-    display: block;
-    margin-bottom: 1rem;  
-    font-size: 1.9rem;
-    color: var(--dark-blue);
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.9rem;
+  color: var(--dark-blue);
 }
 
-.questionaire input[type=text], .questionaire input[type=number] {
-    padding: 0.7rem 1rem;
-    border: 0.2rem solid var(--gold);
-    background-color: var(--beige);
-    width: 60%;
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    height: 3.6rem;
+.questionaire input[type="text"],
+.questionaire input[type="number"] {
+  padding: 0.7rem 1rem;
+  border: 0.2rem solid var(--gold);
+  background-color: var(--beige);
+  width: 60%;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  height: 3.6rem;
 }
-.questionaire input:focus{
-    border: 0.2rem solid var(--brown);
+.questionaire input:focus {
+  border: 0.2rem solid var(--brown);
 }
 
-.measurement-type{
-    margin-bottom: 2rem;
+.measurement-type {
+  margin-bottom: 2rem;
 }
-.measurement-type label{
-    margin-right: 3rem;
+.measurement-type label {
+  margin-right: 3rem;
 }
 input[type="radio"]:checked,
 input[type="radio"]:not(:checked) {
-    position: absolute;
-    left: -9999px;
+  position: absolute;
+  left: -9999px;
 }
-.measurement-type label{
-    position: relative;
-    padding-left: 2.8rem;
-    cursor: pointer;
-    line-height: 2rem;
-    display: inline-block;
-    font-size: 1.5rem;
+.measurement-type label {
+  position: relative;
+  padding-left: 2.8rem;
+  cursor: pointer;
+  line-height: 2rem;
+  display: inline-block;
+  font-size: 1.5rem;
 }
-.measurement-type label:before{
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 1.8rem;
-    height: 1.8rem;
-    border: 0.2rem solid var(--gold);
-    border-radius: 100%;
-    background: var(--beige);
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+.measurement-type label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 0.2rem solid var(--gold);
+  border-radius: 100%;
+  background: var(--beige);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
-.measurement-type label:hover::before{
-    border: 0.2rem solid var(--brown);
+.measurement-type label:hover::before {
+  border: 0.2rem solid var(--brown);
 }
 .measurement-type input[type="radio"]:checked + label:before {
-    border: 0.2rem solid var(--brown);
+  border: 0.2rem solid var(--brown);
 }
-.measurement-type label:after{
-    content: '';
-    width: 1rem;
-    height: 1rem;
-    position: absolute;
-    background-color: var(--gold);
-    top: 0.6rem;
-    left: 0.6rem;
-    border-radius: 100%;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+.measurement-type label:after {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  background-color: var(--gold);
+  top: 0.6rem;
+  left: 0.6rem;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 .measurement-type input[type="radio"]:not(:checked) + label:after {
-    opacity: 0;
-    -webkit-transform: scale(0);
-    transform: scale(0);
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
 }
 .measurement-type input[type="radio"]:checked + label:after {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }
 
-.measurement-type p, .week-days p {
-    font-size: 1.9rem;
-    margin-bottom: 0.8rem;
-    font-weight: var(--roboto-regular);
+.measurement-type p,
+.week-days p {
+  font-size: 1.9rem;
+  margin-bottom: 0.8rem;
+  font-weight: var(--roboto-regular);
 }
-.week-days p{
-    margin-bottom: 2rem;
+.week-days p {
+  margin-bottom: 2rem;
 }
 
 .week-days input[type="checkbox"]:checked,
 .week-days input[type="checkbox"]:not(:checked) {
-    position: absolute;
-    left: -9999px;
+  position: absolute;
+  left: -9999px;
 }
-.week-days label{
-    position: relative;
-    padding-left: 2.2rem;
-    cursor: pointer;
-    line-height: 2rem;
-    display: inline-block;
-    font-size: 1.5rem;
+.week-days label {
+  position: relative;
+  padding-left: 2.2rem;
+  cursor: pointer;
+  line-height: 2rem;
+  display: inline-block;
+  font-size: 1.5rem;
 }
-.week-days label::before{
-    content: '';
-    position: absolute;
-    left: 1.3rem;
-    top: -1rem;
-    width: 3.6rem;
-    height: 3.6rem;
-    border: 0.2rem solid var(--gold);
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+.week-days label::before {
+  content: "";
+  position: absolute;
+  left: 1.3rem;
+  top: -1rem;
+  width: 3.6rem;
+  height: 3.6rem;
+  border: 0.2rem solid var(--gold);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
-.week-days label:hover::before{
-    border-color: var(--brown);
+.week-days label:hover::before {
+  border-color: var(--brown);
 }
 /* .week-days label:first-of-type{
     padding-left: 0;
@@ -209,60 +214,95 @@ input[type="radio"]:not(:checked) {
 
 } */
 
-
-.submit{
-    width: 60%;
-    font-size: 1.5rem;
-    padding: 0.7rem 0;
-    background: var(--gold);
-    border: 0.2rem solid var(--gold);
-    border-radius: 1rem;
-    margin-top: 2.5rem;
-    height: 3.6rem;
-    color: var(--beige);
+.submit {
+  width: 60%;
+  font-size: 1.5rem;
+  padding: 0.7rem 0;
+  background: var(--gold);
+  border: 0.2rem solid var(--gold);
+  border-radius: 1rem;
+  margin-top: 2.5rem;
+  height: 3.6rem;
+  color: var(--beige);
 }
-.submit:hover{
-    border-color: var(--brown);
-
+.submit:hover {
+  border-color: var(--brown);
 }
-
 
 /* Styles for part 2 */
-.log-sessions{
-    height: 50vh;
-    width: 30vw;
-    margin: 0 auto;
-    background-color: var(--beige);
-    color: var(--dark-blue);
-    padding: 4rem 1.5rem;
+.heading-wrapper {
+  /*See hero-wrapper for more information, renamed the wrapper for index2*/
+  width: 40vw;
+  height: 30vh;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem 0;
 }
 
-.log-sessions input[type=text], textarea {
-    padding: 0.7rem 1rem;
-    border: 0.2rem solid var(--gold);
-    background-color: var(--beige);
-    width: 60%;
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    height: 10rem;
+.study-calculations h2 {
+  color: var(--gold);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-weight: var(--roboto-bold);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--dark-blue);
+  font-size: 3.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.study-calculations p {
+  color: var(--dark-blue);
+  font-size: 2.4rem;
+  line-height: 1.34;
+  margin-bottom: 3rem;
+  font-weight: var(--roboto-bold);
+}
+
+.log-sessions {
+  height: 50vh;
+  width: 25vw;
+  margin: 0 auto;
+  background-color: var(--beige);
+  color: var(--dark-blue);
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.log-sessions textarea {
+  padding: 0.7rem 1rem;
+  border: 0.2rem solid var(--gold);
+  background-color: var(--beige);
+  width: 70%;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  height: 10rem;
+}
+
+.log-sessions input[type="number"] {
+  padding: 0.7rem 1rem;
+  border: 0.2rem solid var(--gold);
+  background-color: var(--beige);
+  width: 70%;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  height: 3.6rem;
 }
 
 .questionaire textarea {
-    font-family: var(--roboto-regular);
-    resize: none
+  font-family: var(--roboto-regular);
+  resize: none;
 }
 
 .submit-session {
-    width: 60%;
-    font-size: 1.5rem;
-    padding: 0.7rem 0;
-    background: var(--gold);
-    border: 0.2rem solid var(--gold);
-    border-radius: 1rem;
-    height: 3.6rem;
-    color: var(--beige);
+  width: 70%;
+  font-size: 1.5rem;
+  padding: 0.7rem 0;
+  background: var(--gold);
+  border: 0.2rem solid var(--gold);
+  border-radius: 1rem;
+  height: 3.6rem;
+  color: var(--beige);
 }
 
 .submit-session:hover {
-    border-color: var(--brown);
+  border-color: var(--brown);
 }
