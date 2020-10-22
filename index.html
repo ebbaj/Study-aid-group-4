@@ -18,7 +18,9 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem placeat illum nesciunt nisi qui tenetur alias, ab, impedit expedita quos voluptatum veritatis. Culpa esse similique, mollitia ex aut animi quod.</p>
         </div>
         <div class="starter-questions">
+
             <form class="questionaire">
+
                 <label for="activity">What is your goal for this week?</label>
                 <input type="text" id="activity" placeholder="Enter activity" required>
 
@@ -31,39 +33,46 @@
                     <input type="radio" id="exercises" name="radio" onclick="showExercises();">
                     <label for="exercises">Exercise</label>
                 </div>
+
                 <div id="hidden-hours" class="hide">
                     <label for="measurement-goal">Enter the amount of hours:</label>
-                    <input type="number" id="measurement-goal" placeholder="Enter a number" required>
+                    <input type="number" id="measurement-goal" name="hours" placeholder="Enter a number" required>
                 </div>
+
                 <div id="hidden-pages" class="hide">
                     <label for="measurement-goal">Enter the amount of pages you want to read:</label>
-                    <input type="number" id="measurement-goal" placeholder="Enter a number" required>
+                    <input type="number" id="measurement-goal" name="pages" placeholder="Enter a number" required>
                 </div>
+
                 <div id="hidden-exercises" class="hide">
                     <label for="measurement-goal">Enter the number of exercises you want to practice</label>
-                    <input type="number" id="measurement-goal" placeholder="Enter a number" required>
+                    <input type="number" id="measurement-goal" name="exercises" placeholder="Enter a number" required>
                 </div>
+
                 <div class="week-days">
                     <p>Which days do you want to study this week?</p>
-                    <input type="checkbox" id="monday" name="Monday">
+                    <input type="checkbox" id="monday" name="Monday" value="1">
                     <label for="monday"><span>Mo</span></label>
-                    <input type="checkbox" id="tuesday" name="Tuesday">
+                    <input type="checkbox" id="tuesday" name="Tuesday" value="1">
                     <label for="tuesday"><span>Tu</span></label>
-                    <input type="checkbox" id="wednesday" name="Wednesday">
+                    <input type="checkbox" id="wednesday" name="Wednesday" value="1">
                     <label for="wednesday"><span>We</span></label>
-                    <input type="checkbox" id="thursday" name="Thursday">
+                    <input type="checkbox" id="thursday" name="Thursday" value="1">
                     <label for="thursday"><span>Th</span></label>
-                    <input type="checkbox" id="friday" name="Friday">
+                    <input type="checkbox" id="friday" name="Friday" value="1">
                     <label for="friday"><span>Fr</span></label>
-                    <input type="checkbox" id="saturday" name="Saturday">
+                    <input type="checkbox" id="saturday" name="Saturday" value="1">
                     <label for="saturday"><span>Sa</span></label>
-                    <input type="checkbox" id="sunday" name="Sunday">
+                    <input type="checkbox" id="sunday" name="Sunday" value="1">
                     <label for="sunday"><span>Su</span></label>
                 </div>
 
-                <button class="submit">Start Tracking</button>
+                <button class="submit" value="submit" class="submitButton">Start Tracking</button>
+
+        
                 
             </form>
+
         </div>
     </div>
     

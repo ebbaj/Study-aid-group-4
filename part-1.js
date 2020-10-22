@@ -18,18 +18,30 @@ function showExercises(){
     document.getElementById('hidden-hours').style.display = "none";
 }
 
-/* var removeHiddenPages=document.querySelector("#hidden-pages");
-    removeHiddenPages.checked = false;
-    var removeHiddenHours=document.querySelector("#hidden-hours");
-    removeHiddenHours.checked = false;
-    var removeHiddenExercises=document.querySelector("#hidden-exercises");
-	removeHiddenExercises.checked = false; */
+let activityName;
+
+let measurementType;
+
+let numberOfDays;
+
+let weekdays; //array or if it is tricky to code then just show hours per day this week.
 
 
-// function showInput(){
-//     if (document.getElementById("hours")) {
-//         document.getElementById("hidden-hours").style.display = "block";
-//     } else if (document.getElementById("pages")){
-//         document.getElementById("hidden-pages").style.display = "block";
-//     } 
-// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
