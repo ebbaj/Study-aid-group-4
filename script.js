@@ -7,36 +7,34 @@ let sessionLearnings = document.getElementById('session-learnings');
 
 //Variables - userGoal and userInput are temporary variables to test the progress bar.
 let userGoal = 100;
-let userInput = 38; /* 55-58 gets decimals, fix this bug */
-
+let userInput = 60; /* 55-58 gets decimals, fix this bug */
 
 let nbrKey = "Number";
 let cmtKey = "Comment";
 let i = 0;
-
 
 //Event Listeners
 submitBtn.addEventListener("click", storeSession);
 
 //Functions
 function storeSession(event){ 
-
     event.preventDefault(); 
     
     let sValue = sessionAmount.value;
     let sComment = sessionLearnings.value;
-   
-    localStorage.setItem(nbrKey, sValue);
-    localStorage.setItem(cmtKey, sComment);
-    console.log(localStorage);
 
-    if (i < localStorage.length) {
+    if(i <= localStorage.length) {
         i++;
+        nbrKey = "Number";
+        cmtKey = "Comment";
+
         nbrKey = nbrKey + i;
         cmtKey = cmtKey + i;
-    }
-    console.log(nbrKey);
 
+        localStorage.setItem(nbrKey, sValue);
+        localStorage.setItem(cmtKey, sComment);
+        console.log(localStorage);
+    }
 }
 
 function moveProgressBar() {
