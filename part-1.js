@@ -39,12 +39,15 @@ function activityFun() {
 }
 activityFun();
 
+function measurementType() {
+    let mType = document.getElementById('mType');
+}
+
 });
 
 
-let measurementType;
 
-let numberOfDays;
+
 
  //array or if it is tricky to code then just show hours per day this week.
 
