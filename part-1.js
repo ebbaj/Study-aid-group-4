@@ -26,7 +26,26 @@ let numberOfDays;
 
 let weekdays; //array or if it is tricky to code then just show hours per day this week.
 
+document.getElementById("weekdays").onsubmit=function() {
+    mon = parseInt(document.querySelector('input[name = "monday"]:checked').value);
+    tue = parseInt(document.querySelector('input[name = "tuesday"]:checked').value);
+    wed = parseInt(document.querySelector('input[name = "wednesday"]:checked').value);
+    thu = parseInt(document.querySelector('input[name = "thursday"]:checked').value);
+    fri = parseInt(document.querySelector('input[name = "friday"]:checked').value);
+    sat = parseInt(document.querySelector('input[name = "saturday"]:checked').value);
+    sun = parseInt(document.querySelector('input[name = "sunday"]:checked').value);
 
+result = mon + tue + wed + thu + fri + sat + sun;
+	
+ document.getElementById("grade").innerHTML = result;
+
+ if (result == 2) {result2 = "2 days"};
+
+ document.getElementById("grade2").innerHTML = result2;
+
+}
+	
+  
 
 
 
