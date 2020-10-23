@@ -11,7 +11,7 @@ let userInput = 60; /* 55-58 gets decimals, fix this bug */
 
 let nbrKey = "Number";
 let cmtKey = "Comment";
-let i = 0;
+
 
 //Event Listeners
 submitBtn.addEventListener("click", storeSession);
@@ -23,7 +23,22 @@ function storeSession(event){
     let sValue = sessionAmount.value;
     let sComment = sessionLearnings.value;
 
-    if(i <= localStorage.length) {
+    let i = localStorage.length;
+
+    if(localStorage.length == 0) {
+        //let i = 0;
+        i++;
+        nbrKey = "Number";
+        cmtKey = "Comment";
+
+        nbrKey = nbrKey + i;
+        cmtKey = cmtKey + i;
+
+        localStorage.setItem(nbrKey, sValue);
+        localStorage.setItem(cmtKey, sComment);
+        console.log(localStorage);
+    } else {
+       
         i++;
         nbrKey = "Number";
         cmtKey = "Comment";
