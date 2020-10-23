@@ -47,7 +47,7 @@ mType.querySelectorAll('input').forEach(function (input){
 })
 
 function mTypeAmount() {
-    let mAmount = document.querySelectorAll('.measurement-goal').value;
+    let mAmount = document.querySelectorAll('input').value;
     console.log(mAmount);
 }
 mTypeAmount();
