@@ -18,15 +18,28 @@ function showExercises(){
     document.getElementById('hidden-hours').style.display = "none";
 }
 
+let weekdays = document.getElementById ("daysOptions");
+
+let daysArray = [];
+
+weekdays.querySelectorAll("input").forEach(function (input){
+    if (input.type==='checkbox' && input.checked){
+        daysArray.push(input.value);
+    }
+})
+console.log(daysArray);
+
+
+
 let activityName;
 
 let measurementType;
 
 let numberOfDays;
 
-let weekdays; //array or if it is tricky to code then just show hours per day this week.
+ //array or if it is tricky to code then just show hours per day this week.
 
-document.getElementById("weekdays").onsubmit=function() {
+/* document.getElementById("weekdays").onsubmit=function() {
     mon = parseInt(document.querySelector('input[name = "monday"]:checked').value);
     tue = parseInt(document.querySelector('input[name = "tuesday"]:checked').value);
     wed = parseInt(document.querySelector('input[name = "wednesday"]:checked').value);
@@ -41,7 +54,7 @@ result = mon + tue + wed + thu + fri + sat + sun;
 
  if (result == 2) {result2 = "2 days"};
 
- document.getElementById("grade2").innerHTML = result2;
+ document.getElementById("grade2").innerHTML = result2; */
 
 }
 	
