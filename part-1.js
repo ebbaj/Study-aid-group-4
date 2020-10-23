@@ -39,9 +39,20 @@ function activityFun() {
 }
 activityFun();
 
-function measurementType() {
-    let mType = document.getElementById('mType');
+let mType = document.getElementById("mType");
+mType.querySelectorAll('input').forEach(function (input){
+    if (input.type === 'radio' && input.checked){
+        console.log(input.value);
+    }
+})
+
+function mTypeAmount() {
+    let mAmount = document.getElementById('measurement-goal').value;
+    console.log(mAmount);
 }
+mTypeAmount();
+
+
 
 });
 
