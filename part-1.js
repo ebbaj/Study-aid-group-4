@@ -18,8 +18,11 @@ function showExercises(){
     document.getElementById('hidden-hours').style.display = "none";
 }
 
-let weekdays = document.getElementById ("daysOptions");
 
+
+let weekdays = document.getElementById("daysOptions");
+
+document.getElementById('submitButton').addEventListener('click', function(e) {
 let daysArray = [];
 
 weekdays.querySelectorAll("input").forEach(function (input){
@@ -27,11 +30,17 @@ weekdays.querySelectorAll("input").forEach(function (input){
         daysArray.push(input.value);
     }
 })
+
 console.log(daysArray);
 
+function activityFun() {
+    let activityName = document.getElementById('activity').value;
+    console.log(activityName);
+}
+activityFun();
 
+});
 
-let activityName;
 
 let measurementType;
 
@@ -56,7 +65,7 @@ result = mon + tue + wed + thu + fri + sat + sun;
 
  document.getElementById("grade2").innerHTML = result2; */
 
-}
+// }
 	
   
 
