@@ -1,25 +1,43 @@
+//Selectors
+const submitBtn = document.querySelector(".submit-session");
 const progressBar = document.querySelector('.progress-bar');
-const submitBtn = document.querySelector('.submit-session');
-const sessionAmount = document.getElementById('session-amount').value;
-const sessionLearnings = document.getElementById('session-learnings').value;
+//let submitBtn = document.getElementById('submit-session');
+let sessionAmount = document.getElementById('session-amount');
+let sessionLearnings = document.getElementById('session-learnings');
 
+//Variables - userGoal and userInput are temporary variables to test the progress bar.
 let userGoal = 100;
-let userInput = 73;
+let userInput = 38; /* 55-58 gets decimals, fix this bug */
 
-let sessionHistory = {
-    amountStudied: sessionAmount,
-    comment: sessionLearnings,
+
+let nbrKey = "Number";
+let cmtKey = "Comment";
+let i = 0;
+
+
+//Event Listeners
+submitBtn.addEventListener("click", storeSession);
+
+//Functions
+function storeSession(event){ 
+
+    event.preventDefault(); 
+    
+    let sValue = sessionAmount.value;
+    let sComment = sessionLearnings.value;
+   
+    localStorage.setItem(nbrKey, sValue);
+    localStorage.setItem(cmtKey, sComment);
+    console.log(localStorage);
+
+    if (i < localStorage.length) {
+        i++;
+        nbrKey = nbrKey + i;
+        cmtKey = cmtKey + i;
+    }
+    console.log(nbrKey);
+
 }
-
-
-
-submitBtn.addEventListener('click', submitForm);
-
-function submitForm(){
-    console.log("Hello");
-    console.log(sessionHistory);
-}
-
 
 function moveProgressBar() {
     let progress = userInput / userGoal;
@@ -30,5 +48,6 @@ function moveProgressBar() {
 
 moveProgressBar();
 
+ 
 
 
