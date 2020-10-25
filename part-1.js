@@ -1,43 +1,34 @@
-const weekGoal = document.getElementById('activity');
+const weekGoalTitle = document.getElementById('activity');
 const radioHours = document.getElementById('hours');
 const radioPages = document.getElementById('pages');
 const radioExercises = document.getElementById('exercises');
 const submitBtn = document.getElementById('submitButton');
 
 function showInputs(){
-    
+    if (radioHours.checked){
+        document.getElementById('hidden-hours').style.display = "block"; 
+        document.getElementById('hidden-pages').style.display = "none";
+        document.getElementById('hidden-exercises').style.display = "none";
+    } else if (radioPages.checked) {
+        document.getElementById('hidden-pages').style.display = "block"; 
+        document.getElementById('hidden-hours').style.display = "none";
+        document.getElementById('hidden-exercises').style.display = "none";
+    } else if (radioExercises.checked) {
+        document.getElementById('hidden-exercises').style.display = "block"; 
+        document.getElementById('hidden-pages').style.display = "none";
+        document.getElementById('hidden-hours').style.display = "none";
+    }
 }
-
-
-submitBtn.addEventListener('click', showInputs);
+document.addEventListener('click', showInputs);
 
 
 
-function showPages(){
-    document.querySelector(".hide").style.display = "none";
-    document.getElementById('hidden-pages').style.display = "block";
-    document.getElementById('hidden-hours').style.display = "none";
-    document.getElementById('hidden-exercises').style.display = "none";
-}
-function showHours(){
-    document.querySelector(".hide").style.display = "none";
-    document.getElementById('hidden-hours').style.display = "block";
-    document.getElementById('hidden-pages').style.display = "none";
-    document.getElementById('hidden-exercises').style.display = "none";
-}
-
-function showExercises(){
-    document.querySelector(".hide").style.display = "none";
-    document.getElementById('hidden-exercises').style.display = "block";
-    document.getElementById('hidden-pages').style.display = "none";
-    document.getElementById('hidden-hours').style.display = "none";
-}
 
 
 
 let weekdays = document.getElementById("daysOptions");
 
-document.getElementById('submitButton').addEventListener('click', function(e) {
+submitBtn.addEventListener('click', function(e) {
 let daysArray = [];
 
 weekdays.querySelectorAll("input").forEach(function (input){
@@ -47,29 +38,30 @@ weekdays.querySelectorAll("input").forEach(function (input){
 })
 
 console.log(daysArray);
-
-function activityFun() {
-    let activityName = document.getElementById('activity').value;
-    console.log(activityName);
-}
-activityFun();
-
-let mType = document.getElementById("measureing-type");
-mType.querySelectorAll('input').forEach(function (input){
-    if (input.type === 'radio' && input.checked){
-        console.log(input.value);
-    }
-})
-
-function mTypeAmount() {
-    let mAmount = document.getElementById('measurement-goal').value;
-    console.log(mAmount);
-}
-mTypeAmount();
-
-
-
 });
+
+// function activityFun() {
+//     let activityName = document.getElementById('activity').value;
+//     console.log(activityName);
+// }
+// activityFun();
+
+// let mType = document.getElementById("measureing-type");
+// mType.querySelectorAll('input').forEach(function (input){
+//     if (input.type === 'radio' && input.checked){
+//         console.log(input.value);
+//     }
+// })
+
+// function mTypeAmount() {
+//     let mAmount = document.getElementById('measurement-goal').value;
+//     console.log(mAmount);
+// }
+// mTypeAmount();
+
+
+
+// });
 
 
 
