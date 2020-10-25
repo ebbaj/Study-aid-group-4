@@ -2,6 +2,16 @@ const weekGoal = document.getElementById('activity');
 const radioHours = document.getElementById('hours');
 const radioPages = document.getElementById('pages');
 const radioExercises = document.getElementById('exercises');
+const submitBtn = document.getElementById('submitButton');
+
+function showInputs(){
+    
+}
+
+
+submitBtn.addEventListener('click', showInputs);
+
+
 
 function showPages(){
     document.querySelector(".hide").style.display = "none";
@@ -23,17 +33,19 @@ function showExercises(){
     document.getElementById('hidden-hours').style.display = "none";
 }
 
-let activityName;
-
-let measurementType;
-
-let numberOfDays;
-
-let weekdays; //array or if it is tricky to code then just show hours per day this week.
 
 
-<<<<<<< Updated upstream
-=======
+let weekdays = document.getElementById("daysOptions");
+
+document.getElementById('submitButton').addEventListener('click', function(e) {
+let daysArray = [];
+
+weekdays.querySelectorAll("input").forEach(function (input){
+    if (input.type==='checkbox' && input.checked){
+        daysArray.push(input.value);
+    }
+})
+
 console.log(daysArray);
 
 function activityFun() {
@@ -85,7 +97,6 @@ result = mon + tue + wed + thu + fri + sat + sun;
 // }
 	
   
->>>>>>> Stashed changes
 
 
 
