@@ -2,6 +2,7 @@ const radioHours = document.getElementById('hours');
 const radioPages = document.getElementById('pages');
 const radioExercises = document.getElementById('exercises');
 
+
 function showInputs(){
 
     if (radioHours.checked){
@@ -24,7 +25,10 @@ function showInputs(){
 }
 document.getElementById('measureing-type').addEventListener('click', showInputs);
 
-
+const form = document.querySelector('form');
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+});
 
 const weekdays = document.getElementById("daysOptions");
 const submitBtn = document.getElementById('submitButton');
@@ -56,7 +60,6 @@ submitBtn.addEventListener('click', function(e) {
             let exercises = document.getElementById('measurement-exercises');
             console.log(exercises.value);
         }
-
     }
     mType();
 
