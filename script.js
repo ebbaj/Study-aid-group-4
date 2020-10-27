@@ -3,7 +3,19 @@ const submitBtn = document.querySelector(".submit-session");
 const progressBar = document.querySelector('.progress-bar');
 const list = document.querySelector(".inputList");
 
-let loadInfo = JSON.parse(localStorage.getItem('data'));
+//let loadInfo = JSON.parse(localStorage.getItem('data'));
+
+let loadInfo
+loadData()
+
+function loadData () {
+  if (localStorage.getItem('data')) {
+    loadInfo = JSON.parse(localStorage.getItem('data'))
+  } else {
+    loadInfo = []
+  }
+}
+
 loadPreExisting();
 function save() {
     localStorage.setItem('data', JSON.stringify(loadInfo));
@@ -28,10 +40,6 @@ let sessionInfo;
 let userGoal = 100;
 let userInput = 60; /* 55-58 gets decimals, fix this bug */
 
-function doFirst() {   
-    display();
-}
-
 submitBtn.addEventListener("click", storeSession);
 //Functions
 function storeSession(event){ 
@@ -45,7 +53,6 @@ function storeSession(event){
 
     loadInfo.push(sessionInfo);
     save();
-
     const inputItem = document.createElement("li");
     const removeButton = document.createElement("button");
     removeButton.innerText = "Remove";
