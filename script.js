@@ -24,7 +24,7 @@ function loadPreExisting() {
 }
 let sessionInfo;
 
-//Variables - userGoal and userInput are temporary variables to test the progress bar.
+//Variables - userGoal and userInput are temporary variables to test the progress bar
 let userGoal = 100;
 let userInput = 60; /* 55-58 gets decimals, fix this bug */
 
@@ -45,14 +45,6 @@ function storeSession(event){
 
     loadInfo.push(sessionInfo);
     save();
-    /*
-    let old_data = JSON.parse(localStorage.getItem('data'));
-    if(!(old_data instanceof Array))
-    old_data = [old_data];
-    old_data.push(sessionInfo);
-    localStorage.setItem('data', JSON.stringify(old_data));
-    console.log(old_data);
-    */
 
     const inputItem = document.createElement("li");
     const removeButton = document.createElement("button");
@@ -62,22 +54,6 @@ function storeSession(event){
     list.appendChild(inputItem);
     inputItem.appendChild(removeButton);
 }
-/*
-function display() {
-    if(localStorage.length != 0){
-        listSession();
-    }
-}
-
-
-window.addEventListener('load', doFirst);
-
-*/
-
-
-
-
-
 
 function moveProgressBar() {
     let progress = userInput / userGoal;
