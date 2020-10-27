@@ -3,6 +3,25 @@ const submitBtn = document.querySelector(".submit-session");
 const progressBar = document.querySelector('.progress-bar');
 const list = document.querySelector(".inputList");
 
+let loadInfo = JSON.parse(localStorage.getItem('data'));
+loadPreExisting();
+function save() {
+    localStorage.setItem('data', JSON.stringify(loadInfo));
+}
+
+function loadPreExisting() {
+    for(let item of loadInfo) {
+        if(item) {
+            const inputItem = document.createElement("li");
+            const removeButton = document.createElement("button");
+            removeButton.innerText = "Remove";
+
+            inputItem.innerText = "Date: " + item.date + "\n" + "Activity: " + "\n" + "Amount: " + item.sessionAmount + "\n" + "Learning: " + item.sessionComment;
+            list.appendChild(inputItem);
+            inputItem.appendChild(removeButton);
+        }
+    }
+}
 let sessionInfo;
 
 //Variables - userGoal and userInput are temporary variables to test the progress bar.
@@ -24,19 +43,20 @@ function storeSession(event){
     'sessionComment': document.getElementById('session-learnings').value
     }
 
+    loadInfo.push(sessionInfo);
+    save();
+    /*
     let old_data = JSON.parse(localStorage.getItem('data'));
     if(!(old_data instanceof Array))
     old_data = [old_data];
     old_data.push(sessionInfo);
     localStorage.setItem('data', JSON.stringify(old_data));
     console.log(old_data);
+    */
 
     const inputItem = document.createElement("li");
     const removeButton = document.createElement("button");
     removeButton.innerText = "Remove";
-
-    let retrievedData = localStorage.getItem('data');
-    let inputs = JSON.parse(retrievedData);
 
     inputItem.innerText = "Date: " + sessionInfo.date + "\n" + "Activity: " + "\n" + "Amount: " + sessionInfo.sessionAmount + "\n" + "Learning: " + sessionInfo.sessionComment;
     list.appendChild(inputItem);
