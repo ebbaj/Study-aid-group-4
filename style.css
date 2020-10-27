@@ -244,6 +244,8 @@ input[type="radio"]:not(:checked) {
   width: 80vw;
   height: 50vh;
   margin: 0 auto;
+  margin-bottom: 7rem;
+  margin-top: 8rem;
   text-align: center;
   padding: 2rem 0;
   justify-content: space-between;
@@ -284,6 +286,7 @@ input[type="radio"]:not(:checked) {
 .log-sessions textarea {
   padding: 0.7rem 1rem;
   border: 0.2rem solid var(--gold);
+  border-radius: 5px;
   background-color: var(--beige);
   width: 70%;
   font-size: 1.5rem;
@@ -294,6 +297,7 @@ input[type="radio"]:not(:checked) {
 .log-sessions input[type="number"] {
   padding: 0.7rem 1rem;
   border: 0.2rem solid var(--gold);
+  border-radius: 5px;
   background-color: var(--beige);
   width: 70%;
   font-size: 1.5rem;
@@ -323,7 +327,7 @@ input[type="radio"]:not(:checked) {
 
 .progress-container {
   height: 20px;
-  width: 90vw;
+  width: 80vw;
   margin: 0 auto;
   background-color: var(--dark-blue);
   border-radius: 60px;
@@ -339,4 +343,42 @@ input[type="radio"]:not(:checked) {
   text-align: center;
   padding-top: 4px;
   padding-bottom: 4px;
+}
+
+.inputList {
+  display: flex;
+  margin-bottom: 7rem;
+  margin-top: 7rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.inputList li {
+  display: flex;
+  list-style: none;
+  color: var(--dark-blue);
+  font-size: 1.5rem;
+  border: 1px solid var(--gold);
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  width: 50vw;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inputList button {
+  width: 15%;
+  height: 6rem;
+  font-size: 1.5rem;
+  padding: 0.7rem;
+  background: var(--gold);
+  border: 0.2rem solid var(--gold);
+  border-radius: 1rem;
+  color: var(--beige);
+}
+
+.inputList button:hover {
+  border-color: var(--brown);
 }
