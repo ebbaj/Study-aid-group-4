@@ -35,7 +35,7 @@ button{
 .hero-wrapper{
     width: 40vw;
     height: 75vh;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     text-align: center;
     padding: 2rem 0;
 }
@@ -208,6 +208,14 @@ input[type="checkbox"]:not(:checked) {
     height: 2.6rem;
     background-color: var(--gold);
 }
+
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+
 
 
 .submit{
