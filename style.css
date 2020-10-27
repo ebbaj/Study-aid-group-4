@@ -232,3 +232,6 @@ input[type="checkbox"]:not(:checked) {
 .submit:hover{
     border-color: var(--brown);
 }
+
+
+/* Merging two html pages */
