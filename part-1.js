@@ -3,10 +3,11 @@ const radioPages = document.getElementById('pages');
 const radioExercises = document.getElementById('exercises');
 
 
-function showInputs(){
 
-    if (radioHours.checked){
-        document.getElementById('measurement-hours').required = true;
+    function showInputs(){
+
+     if (radioHours.checked){
+         document.getElementById('measurement-hours').required = true;
         document.getElementById('hidden-hours').style.display = "block";
         document.getElementById('hidden-pages').style.display = "none";
         document.getElementById('hidden-exercises').style.display = "none";
@@ -47,18 +48,22 @@ submitBtn.addEventListener('click', function(e) {
     console.log(activityName);
 
     function mType(){
+        let calculatedResult = 0;
         if (radioHours.checked){
-            console.log(radioHours.value);
             let hours = document.getElementById('measurement-hours');
-            console.log(hours.value);
+            console.log(hours.value + " hours this week!");
+            calculatedResult = parseInt(hours.value) / daysArray.length;
+            console.log("You need to " + calculatedResult);
         } else if (radioPages.checked){
-            console.log(radioPages.value);
             let pages = document.getElementById('measurement-pages');
-            console.log(pages.value);
+            console.log("You chose to read " + pages.value + " pages this week!");
+            calculatedResult = parseInt(pages.value) / daysArray.length;
+            console.log("You need to" + calculatedResult);
         } else if (radioExercises.checked){
-            console.log(radioExercises.value);
             let exercises = document.getElementById('measurement-exercises');
-            console.log(exercises.value);
+            console.log(exercises.value + "Exercises this week!");
+            calculatedResult = parseInt(exercises.value) / daysArray.length;
+            console.log("You need to" + calculatedResult);
         }
     }
     mType();
@@ -66,9 +71,6 @@ submitBtn.addEventListener('click', function(e) {
     console.log(daysArray);
 
 });
-
-
-
 
 
 
