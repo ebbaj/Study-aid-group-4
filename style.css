@@ -32,7 +32,6 @@ button {
 }
 
 /* Main Styles */
-
 .hero-wrapper {
   width: 40vw;
   height: 75vh;
@@ -76,143 +75,35 @@ button {
   color: var(--dark-blue);
 }
 
-.questionaire input[type="text"],
-.questionaire input[type="number"] {
-  padding: 0.7rem 1rem;
-  border: 0.2rem solid var(--gold);
-  background-color: var(--beige);
-  width: 60%;
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  height: 3.6rem;
+.week-days input[type="checkbox"]:checked + label::before{
+    border-color: var(--brown);
 }
-.questionaire input:focus {
-  border: 0.2rem solid var(--brown);
+.week-days input[type="checkbox"]:checked + label span{
+    color: var(--beige);
+    z-index: 1;
 }
-
-.measurement-type {
-  margin-bottom: 2rem;
+.week-days label::after{
+    transition: all 0.2 ease-in-out;
 }
-.measurement-type label {
-  margin-right: 3rem;
+.week-days input[type="checkbox"]:not(:checked) + label::after {
+    background-color: var(--beige);
 }
-input[type="radio"]:checked,
-input[type="radio"]:not(:checked) {
-  position: absolute;
-  left: -9999px;
-}
-.measurement-type label {
-  position: relative;
-  padding-left: 2.8rem;
-  cursor: pointer;
-  line-height: 2rem;
-  display: inline-block;
-  font-size: 1.5rem;
-}
-.measurement-type label:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 1.8rem;
-  height: 1.8rem;
-  border: 0.2rem solid var(--gold);
-  border-radius: 100%;
-  background: var(--beige);
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-}
-.measurement-type label:hover::before {
-  border: 0.2rem solid var(--brown);
-}
-.measurement-type input[type="radio"]:checked + label:before {
-  border: 0.2rem solid var(--brown);
-}
-.measurement-type label:after {
-  content: "";
-  width: 1rem;
-  height: 1rem;
-  position: absolute;
-  background-color: var(--gold);
-  top: 0.6rem;
-  left: 0.6rem;
-  border-radius: 100%;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-}
-.measurement-type input[type="radio"]:not(:checked) + label:after {
-  opacity: 0;
-  -webkit-transform: scale(0);
-  transform: scale(0);
-}
-.measurement-type input[type="radio"]:checked + label:after {
-  opacity: 1;
-  -webkit-transform: scale(1);
-  transform: scale(1);
+.week-days input[type="checkbox"]:checked + label::after{
+    content: '';
+    position: absolute;
+    left: 1rem;
+    bottom: 0.9rem;
+    width: 3.4rem;
+    height: 2.6rem;
+    background-color: var(--gold);
 }
 
-.measurement-type p,
-.week-days p {
-  font-size: 1.9rem;
-  margin-bottom: 0.8rem;
-  font-weight: var(--roboto-regular);
+.hide{
+    display: none;
 }
-.week-days p {
-  margin-bottom: 2rem;
+.show{
+    display: block;
 }
-
-.week-days input[type="checkbox"]:checked,
-.week-days input[type="checkbox"]:not(:checked) {
-  position: absolute;
-  left: -9999px;
-}
-.week-days label {
-  position: relative;
-  padding-left: 2.2rem;
-  cursor: pointer;
-  line-height: 2rem;
-  display: inline-block;
-  font-size: 1.5rem;
-}
-.week-days label::before {
-  content: "";
-  position: absolute;
-  left: 1.3rem;
-  top: -1rem;
-  width: 3.6rem;
-  height: 3.6rem;
-  border: 0.2rem solid var(--gold);
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-}
-.week-days label:hover::before {
-  border-color: var(--brown);
-}
-/* .week-days label:first-of-type{
-    padding-left: 0;
-}
-.week-days label:first-of-type::before{
-    left: -1rem;
-}
-.week-days label:nth-of-type(2){
-    padding-left: 1.8rem;
-}
-.week-days label:nth-of-type(2)::before{
-    left: 1.3rem;
-}
-.week-days label:nth-of-type(3){
-    padding-left: 2rem;
-}
-.week-days label:nth-of-type(3)::before{
-    left: 1.4rem;
-}
-.week-days label:nth-of-type(4){
-    padding-left: 2rem;
-}
-.week-days label:nth-of-type(4)::before{
-    left: 1.1rem;
-
-} */
 
 .submit {
   width: 60%;
@@ -325,6 +216,21 @@ input[type="radio"]:not(:checked) {
   border-color: var(--brown);
 }
 
+.submit{
+    width: 60%;
+    font-size: 1.6rem;
+    padding: 0.7rem 0;
+    background: var(--gold);
+    border: 0.2rem solid var(--gold);
+    border-radius: 1rem;
+    margin-top: 2.5rem;
+    height: 3.6rem;
+    color: var(--beige);
+}
+.submit:hover{
+    border-color: var(--brown);
+}
+
 .progress-container {
   height: 20px;
   width: 80vw;
@@ -382,3 +288,4 @@ input[type="radio"]:not(:checked) {
 .inputList button:hover {
   border-color: var(--brown);
 }
+
