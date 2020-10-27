@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Study Aid</title>
+  </head>
+  <body>
+    <div class="navigation">
+      <button>History</button>
+    </div>
+
+    <div class="heading-wrapper">
+      <header>
+        <h1>Heading</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </header>
+    </div>
+    <div class="content-wrapper">
+      <div class="study-calculations">
+        <h2>To reach your goal you need to:</h2>
+        <p>Finish measurment number everyday</p>
+        <h2>To reach your goal for today:</h2>
+        <p>Finish measurment number today!</p>
+      </div>
+      <div class="log-sessions">
+        <form class="questionaire">
+          <label for="session-amount">How many pages did you read?</label>
+          <!-- Temporary text, change with js depending on user input -->
+          <input
+            type="number"
+            id="session-amount"
+            placeholder="Enter amount you studied"
+            required
+          />
+
+          <label for="session-learnings">What did you learn today?</label>
+          <textarea
+            name="message"
+            id="session-learnings"
+            rows="10"
+            cols="30"
+            placeholder="Enter a comment"
+          ></textarea>
+
+          <button class="submit-session">Add Session</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="progress-container">
+      <div class="progress-bar">20%</div>
+    </div>
+
+    <ul class="inputList"></ul>
+  </body>
+
+  <footer>
+    <script src="script.js"></script>
+  </footer>
+</html>
