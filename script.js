@@ -78,15 +78,29 @@ function loadPreExisting() {
         if(item) {
             const inputItem = document.createElement("li");
             const removeButton = document.createElement("button");
-            removeButton.innerText = "Remove";
+            removeButton.className = "remove";
+            removeButton.textContent = "Remove";
             removeButton.addEventListener('click', deleteHabit)
 
-            inputItem.innerText = "Date: " + item.date + "\n" + "Activity: " + "\n" + "Amount: " +  item.sessionAmount + "\n" + "Learning: ";
+
+            // Added this for readibility >Omid
+            const datePara = document.createElement('span');
+            datePara.className = "learning-date";
+            datePara.textContent = "Date: " + item.date;
+
+            const pagesPara = document.createElement('span');
+            pagesPara.className = "learning-pages";
+            pagesPara.textContent = item.sessionAmount + " pages";
+
             list.appendChild(inputItem);
             const comment = document.createElement('span')
+            comment.className = "learning-comment";
+            comment.textContent = "Today I learned that " + "\n" + item.sessionComment;
             console.log(comment)
-            comment.innerText =  item.sessionComment
-            inputItem.appendChild(comment)
+
+            inputItem.appendChild(datePara);
+            inputItem.appendChild(comment);
+            inputItem.appendChild(pagesPara);
 
             inputItem.appendChild(removeButton);
             
