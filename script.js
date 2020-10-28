@@ -28,16 +28,25 @@ form.addEventListener('submit', function(e) {
     e.preventDefault();
 });
 
-// const weekdays = document.getElementById("daysOptions");
 const submitBtn = document.getElementById('submitButton');
 
 function book(){
     let bookTitle = document.querySelector('#book-title').value;
     return bookTitle;
 }
+function totalPages(){
+    let pageCount = document.querySelector('#pages').value;
+    return pageCount;
+}
+function totalDays(){
+    let daysCount = document.querySelector('#days').value;
+    return daysCount;
+}
 
 
 submitBtn.addEventListener('click', function(e) {
     console.log(book());
+    console.log(totalPages());
+    console.log(totalDays());
 });
 
