@@ -25,6 +25,7 @@ const radioExercises = document.getElementById('exercises');
     }
 
 }
+
 document.getElementById('measureing-type').addEventListener('click', showInputs);
 
 const form = document.querySelector('form');
@@ -33,10 +34,10 @@ form.addEventListener('submit', function(e) {
 });
 
 const weekdays = document.getElementById("daysOptions");
-const submitBtn = document.getElementById('submitButton');
+const submit1Btn = document.getElementById('submitButton');
 
 
-submitBtn.addEventListener('click', function(e) {
+submit1Btn.addEventListener('click', function(e) {
     let daysArray = [];
 
     weekdays.querySelectorAll("input").forEach(function (input){
@@ -77,7 +78,7 @@ submitBtn.addEventListener('click', function(e) {
 // ------------------- THIS IS WHERE PART-2 JS STARTS -------------------
 
 //Selectors
-const submitBtn = document.querySelector(".submit-session");
+const submit2Btn = document.querySelector(".submit-session");
 const progressBar = document.querySelector('.progress-bar');
 const list = document.querySelector(".inputList");
 
@@ -118,7 +119,7 @@ let sessionInfo;
 let userGoal = 100;
 let userInput = 60; /* 55-58 gets decimals, fix this bug */
 
-submitBtn.addEventListener("click", storeSession);
+submit2Btn.addEventListener("click", storeSession);
 //Functions
 function storeSession(event){ 
     event.preventDefault(); 
