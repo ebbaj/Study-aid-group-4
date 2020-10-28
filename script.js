@@ -176,19 +176,15 @@ function moveProgressBar() {
     let totalPages = localStorage.getItem('pages');
     let recalculPages = localStorage.getItem('pagesLeft');
     let progress = parseInt(recalculPages) / parseInt(totalPages);
-    let finalP = Math.round(progress * 100);
+    let reversProgress = 1 - progress;
+    let finalP = Math.floor(reversProgress * 100);
     if (finalP === 0 ) {
-        console.log(finalP)
         progressBar.innerHTML = `0%`;
-
     } else if (finalP < 5 ) {
-            console.log(finalP)
-            progressBar.innerHTML = `${finalP}%`;
+        progressBar.innerHTML = `${finalP}%`;
     } else {
-    console.log(progress)
-    console.log(finalP)
-    progressBar.style.width = finalP + '%';
-    progressBar.innerHTML = `${finalP}%`;
+        progressBar.style.width = finalP + '%';
+        progressBar.innerHTML = `${finalP}%`;
     }
 }
 
