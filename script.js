@@ -152,7 +152,8 @@ function storeSession(event){
     let currentGoal = localStorage.getItem('pages');
     let recalculatedGoal = parseInt(currentGoal) - parseInt(sessionInfo.sessionAmount);
     localStorage.setItem("pagesLeft", recalculatedGoal);
-
+    
+    displayStoredGoal();
 }
 
 function deleteHabit(e) {
@@ -212,9 +213,13 @@ function displayStoredGoal() {
      document.querySelector(".calculated-goal").innerHTML = `We are missing information about either days or pages. Please go back and add those in "Start a book".`;
     } else {
         // Keep the parseInt(calculatedGoal) here otherwise it will show the precise claculation like 345 / 34 = 10.147058823529411
-        document.querySelector(".calculated-goal").innerHTML = "To meet you goal you need to read " + parseInt(calculatedGoal) + " pages everyday.";
+        document.querySelector(".calculated-goal").innerHTML = "To meet you goal you need to read approximently " + parseInt(calculatedGoal) + " pages everyday.";
     }
 
+    let pagesLeft = localStorage.getItem('pagesLeft')
+    if (pagesLeft) {
+        document.querySelector(".pages-left").innerHTML = "You have " + parseInt(pagesLeft) + " pages left to finish your book.";
+    }
 }
 
 
