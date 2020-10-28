@@ -109,8 +109,8 @@ function storeSession(event){
     'date': new Date().toISOString().slice(0, 10),
     'sessionAmount': document.getElementById('session-amount').value,
     'sessionComment': document.getElementById('session-learnings').value,
-    'weeklyGoal': document.querySelector('.weeklyGoal').innerHTML,
-    'dailyGoal': document.querySelector('.todaysGoal').innerHTML,
+    //'weeklyGoal': document.querySelector('.weeklyGoal').innerHTML,
+    //'dailyGoal': document.querySelector('.todaysGoal').innerHTML,
     'progressBar': document.querySelector('.progress-bar'),
     }
 
@@ -131,7 +131,7 @@ function storeSession(event){
     inputItem.appendChild(comment)
     inputItem.appendChild(removeButton);
 
-    changeTextItems();
+    //changeTextItems();
     moveProgressBar();
 
 }
