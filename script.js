@@ -79,39 +79,26 @@ function loadPreExisting() {
         if(item) {
             const inputItem = document.createElement("li");
             const removeButton = document.createElement("button");
-            removeButton.className = "remove";
-            removeButton.textContent = "Remove";
+            removeButton.innerText = "Remove";
             removeButton.addEventListener('click', deleteHabit)
 
-
-            // Added this for readibility >Omid
-            const datePara = document.createElement('span');
-            datePara.className = "learning-date";
-            datePara.textContent = "Date: " + item.date + "\n";
-
-            const pagesPara = document.createElement('span');
-            pagesPara.className = "learning-pages";
-            pagesPara.textContent = item.sessionAmount + " pages" + "\n";
-
+            inputItem.innerText = "Date: " + item.date + "\n" + "Activity: " + "\n" + "Amount: " +  item.sessionAmount + "\n" + "Learning: ";
             list.appendChild(inputItem);
             const comment = document.createElement('span')
-            comment.className = "learning-comment";
-            comment.textContent = item.sessionComment + "\n";
             console.log(comment)
-
-            inputItem.appendChild(datePara);
-            inputItem.appendChild(pagesPara);
-            inputItem.appendChild(comment);
-            
+            comment.innerText =  item.sessionComment
+            inputItem.appendChild(comment)
 
             inputItem.appendChild(removeButton);
             
-            // changeTextItems();
+
             // moveProgressBar();
+
 
         }
     }
 }
+
 
 let sessionInfo;
 
@@ -125,14 +112,11 @@ function storeSession(event){
     'date': new Date().toISOString().slice(0, 10),
     'sessionAmount': document.getElementById('session-amount').value,
     'sessionComment': document.getElementById('session-learnings').value,
-    //'weeklyGoal': document.querySelector('.weeklyGoal').innerHTML,
-    //'dailyGoal': document.querySelector('.todaysGoal').innerHTML,
     'progressBar': document.querySelector('.progress-bar'),
     }
 
     loadInfo.push(sessionInfo);
     save();
-
 
     const inputItem = document.createElement("li");
     const removeButton = document.createElement("button");
@@ -147,8 +131,14 @@ function storeSession(event){
     inputItem.appendChild(comment)
     inputItem.appendChild(removeButton);
 
-    //changeTextItems();
+    moveProgressBar();
+
+    let currentGoal = localStorage.getItem('pages');
+    let recalculatedGoal = parseInt(currentGoal) - parseInt(sessionInfo.sessionAmount);
+    localStorage.setItem("pagesLeft", recalculatedGoal);
+
     let pagesLeft = localStorage.getItem('pagesLeft');
+
     
     if (parseInt(pagesLeft) === 0 || pagesLeft === "0") {
         let currentGoal = localStorage.getItem('pages');
@@ -202,6 +192,7 @@ function moveProgressBar() {
     }
 }
 
+moveProgressBar();
 
 function displayStoredGoal() {
     let book = localStorage.getItem('book');
