@@ -30,23 +30,14 @@ form.addEventListener('submit', function(e) {
 
 const submitBtn = document.getElementById('submitButton');
 
-function book(){
-    let bookTitle = document.querySelector('#book-title').value;
-    return bookTitle;
-}
-function totalPages(){
-    let pageCount = document.querySelector('#pages').value;
-    return pageCount;
-}
-function totalDays(){
+submitBtn.addEventListener('click', getInputs) 
+
+function getInputs(){
     let daysCount = document.querySelector('#days').value;
-    return daysCount;
+    let pageCount = document.querySelector('#pages').value;
+    let bookTitle = document.querySelector('#book-title').value;
+    console.log(daysCount);
+    console.log(pageCount);
+    console.log(bookTitle);
 }
-
-
-submitBtn.addEventListener('click', function(e) {
-    console.log(book());
-    console.log(totalPages());
-    console.log(totalDays());
-});
 
