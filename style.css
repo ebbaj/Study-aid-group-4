@@ -39,7 +39,7 @@ button{
     background-color: var(--beige);
     font-size:4rem;
     color: var(--dark-blue);
-    margin: 0 auto;
+    /* margin: 0 auto; */
     text-align: center;
 }
 nav h1{
