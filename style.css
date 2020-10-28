@@ -35,11 +35,11 @@ button{
 /* Navigation Wrapper */
 .main-content{
     width: 40vw;
-    padding: 2rem;
+    padding: 2rem 2rem 4rem;
     background-color: var(--beige);
     font-size:4rem;
     color: var(--dark-blue);
-    /* margin: 0 auto; */
+    margin: 4rem auto 0;
     text-align: center;
 }
 nav h1{
@@ -53,6 +53,7 @@ nav h1{
 }
 nav h4{
     font-size: 1.9rem;
+    margin-top: 3rem;
 }
 nav p{
     color: var(--dark-blue);
@@ -147,6 +148,7 @@ nav button:hover{
 .starter-modal{
     background-color: var(--dark-green);
     height: 100%;
+    padding-top: 4rem;
 }
 
 .starter-question{
@@ -178,18 +180,17 @@ nav button:hover{
     border: 0.2rem solid var(--brown);
 }
 
-.measurement-type{
-    margin-bottom: 2rem;
-    display: grid;
-    grid-template-rows: 1fr 0.7fr;
-    grid-template-columns: repeat(3, 1fr);
-}
-input[type="radio"]:checked,
-input[type="radio"]:not(:checked),
 input[type="checkbox"]:checked,
 input[type="checkbox"]:not(:checked) {
     position: absolute;
     left: -9999px;
+}
+
+/* .measurement-type{
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-rows: 1fr 0.7fr;
+    grid-template-columns: repeat(3, 1fr);
 }
 .measurement-type label{
     position: relative;
@@ -235,7 +236,7 @@ input[type="checkbox"]:not(:checked) {
 .measurement-type input[type="radio"]:checked + label:after {
     opacity: 1;
     transform: scale(1);
-}
+} */
 
 .measurement-type p, .week-days p {
     font-size: 1.9rem;
@@ -301,12 +302,6 @@ input[type="checkbox"]:not(:checked) {
     background-color: var(--gold);
 }
 
-.hide{
-    display: none;
-}
-.show{
-    display: block;
-}
 
 
 
