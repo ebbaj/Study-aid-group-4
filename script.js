@@ -182,17 +182,18 @@ function displayStoredGoal() {
     if (book === undefined || book === null || book === '') {
         document.querySelector(".current-book").innerHTML = `No book title found, go back and start a new book!`;
     } else {
-        document.querySelector(".current-book").innerHTML = `You're currently reading ${book}`;
+        document.querySelector(".current-book").innerHTML = `You're currently reading: ${book}`;
     }
 
     let totalPages = localStorage.getItem('pages');
     let totalDays = localStorage.getItem('days');
     let calculatedGoal = parseInt(totalPages) / parseInt(totalDays);
 
-    if (totalPages === undefined || totalPages === '' && totalDays === undefined || totalDays === '' && calculatedGoal === null) {
+    if (totalPages === undefined || totalPages === null || totalPages === '' && totalDays === undefined || totalDays === null || totalDays === '') {
      document.querySelector(".calculated-goal").innerHTML = `We are missing information about either days or pages. Please go back and add those in "Start a book"`;
     } else {
-        document.querySelector(".calculated-goal").innerHTML = "To meet you goal you need to read " + parseInt(calculatedGoal) + "pages everyday.";
+        // Keep the parseInt(calculatedGoal) here otherwise it will show the precise claculation like 345 / 34 = 10.147058823529411
+        document.querySelector(".calculated-goal").innerHTML = "To meet you goal you need to read approximately " + parseInt(calculatedGoal) + " pages everyday.";
     }
 
 }
