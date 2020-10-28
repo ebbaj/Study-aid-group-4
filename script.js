@@ -1,6 +1,5 @@
 // modal Window 
 function formModal() {
-
     document.addEventListener('click', function (event) {
         event = window.event;
         const target = event.target ;
