@@ -31,6 +31,10 @@ form.addEventListener('submit', function(e) {
     e.preventDefault();
 });
 
+window.onload = function() {
+    displayStoredGoal();
+}
+
 const submitBtn = document.getElementById('submitButton');
 
 submitBtn.addEventListener('click', getInputs) 
@@ -42,7 +46,7 @@ function getInputs(){
     localStorage.setItem('days', daysCount);
     localStorage.setItem('pages', pageCount);
     localStorage.setItem('book', bookTitle);
-    displayBook();
+    displayStoredGoal();
 }
 
 
@@ -86,7 +90,7 @@ function loadPreExisting() {
 
             inputItem.appendChild(removeButton);
             
-            changeTextItems();
+            // changeTextItems();
             moveProgressBar();
 
         }
@@ -165,15 +169,33 @@ function moveProgressBar() {
 moveProgressBar();
 
 //Test to update innerHTML of text items - maybe make this into reCalc() function?
-function changeTextItems() {
-    let weeklyNumber = 50; //temporary values, will be based on userInput later on
-    let dailyNumber = 30;
-    document.querySelector(".weeklyGoal").innerHTML = "Finish " + weeklyNumber + " pages everyday";
-    document.querySelector(".todaysGoal").innerHTML = "Read " + dailyNumber + " pages";
+    //WE CHANGED THE CLASS NAME OF WEEKLY GOAL AND TODAYS GOAL
+// function changeTextItems() {
+//     let weeklyNumber = 50; //temporary values, will be based on userInput later on
+//     let dailyNumber = 30;
+//     document.querySelector(".weeklyGoal").innerHTML = "Finish " + weeklyNumber + " pages everyday";
+//     document.querySelector(".todaysGoal").innerHTML = "Read " + dailyNumber + " pages";
+// }
+
+function displayStoredGoal() {
+    let book = localStorage.getItem('book');
+    if (book === undefined || book === null || book === '') {
+        document.querySelector(".current-book").innerHTML = `No book title found, go back and start a new book!`;
+    } else {
+        document.querySelector(".current-book").innerHTML = `You're currently reading ${book}`;
+    }
+
+    let totalPages = localStorage.getItem('pages');
+    let totalDays = localStorage.getItem('days');
+    let calculatedGoal = parseInt(totalPages) / parseInt(totalDays);
+
+    if (totalPages === undefined || totalPages === '' && totalDays === undefined || totalDays === '' && calculatedGoal === null) {
+     document.querySelector(".calculated-goal").innerHTML = `We are missing information about either days or pages. Please go back and add those in "Start a book"`;
+    } else {
+        document.querySelector(".calculated-goal").innerHTML = "To meet you goal you need to read " + parseInt(calculatedGoal) + "pages everyday.";
+    }
+
 }
 
-function displayBook() {
-    let book = localStorage.getItem('book');
-    document.querySelector(".current-book").innerHTML = `You're currently reading ${book}`;
-}
+
 
