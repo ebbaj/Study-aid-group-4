@@ -219,4 +219,5 @@ function displayStoredGoal() {
         document.querySelector(".pages-left").innerHTML = "You have " + parseInt(pagesLeft) + " pages left to finish your book.";
          }
     moveProgressBar();
+    
 }
