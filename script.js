@@ -178,10 +178,11 @@ function moveProgressBar() {
     let progress = parseInt(recalculPages) / parseInt(totalPages);
     let reversProgress = 1 - progress;
     let finalP = Math.floor(reversProgress * 100);
-    if (finalP === 0 ) {
+    if (finalP < 0 ) {
         progressBar.innerHTML = `0%`;
     } else if (finalP < 5 ) {
         progressBar.innerHTML = `${finalP}%`;
+        progressBar.style.width = "10%";
     } else {
         progressBar.style.width = finalP + '%';
         progressBar.innerHTML = `${finalP}%`;
