@@ -16,7 +16,7 @@ function loadData () {
 
 loadPreExisting();
 function save() {
-    localStorage.setItem('data', JSON.stringify(loadInfo));
+        localStorage.setItem('data', JSON.stringify(loadInfo));
 }
 
 function loadPreExisting() {
@@ -25,18 +25,31 @@ function loadPreExisting() {
             const inputItem = document.createElement("li");
             const removeButton = document.createElement("button");
             removeButton.innerText = "Remove";
+            removeButton.addEventListener('click', deleteHabit)
 
-            inputItem.innerText = "Date: " + item.date + "\n" + "Activity: " + "\n" + "Amount: " + item.sessionAmount + "\n" + "Learning: " + item.sessionComment;
-            list.appendChild(inputItem);
+       
+
+            inputItem.innerText = "Date: " + item.date + "\n" + "Activity: " + "\n" + "Amount: " +  item.sessionAmount + "\n" + "Learning: ";
+    list.appendChild(inputItem);
+    const comment = document.createElement('span')
+    console.log(comment)
+    comment.innerText =  item.sessionComment
+    inputItem.appendChild(comment)
+
             inputItem.appendChild(removeButton);
             
             changeTextItems();
             moveProgressBar();
-
-            removeButton.addEventListener('click', () => {            
-                inputItem.remove();
-            });
+/*
+           
+            for (let i = 0; i < loadInfo.length; i++){
+                removeButton.addEventListener('click', function() { 
+                    /*document.getElementById("delete" + i).addEventListener("click", function(){
+                    deleteInput(i);    
+                });
+            }
             
+ */           
 
         }
     }
@@ -61,21 +74,43 @@ function storeSession(event){
 
     loadInfo.push(sessionInfo);
     save();
+
+
     const inputItem = document.createElement("li");
     const removeButton = document.createElement("button");
     removeButton.innerText = "Remove";
+    removeButton.addEventListener('click', deleteHabit)
 
-    inputItem.innerText = "Date: " + sessionInfo.date + "\n" + "Activity: " + "\n" + "Amount: " + sessionInfo.sessionAmount + "\n" + "Learning: " + sessionInfo.sessionComment;
+    inputItem.innerText = "Date: " + sessionInfo.date + "\n" + "Activity: " + "\n" + "Amount: " + sessionInfo.sessionAmount + "\n" + "Learning: ";
     list.appendChild(inputItem);
+    const comment = document.createElement('span')
+    console.log(comment)
+    comment.innerText =  sessionInfo.sessionComment
+    inputItem.appendChild(comment)
     inputItem.appendChild(removeButton);
 
     changeTextItems();
     moveProgressBar();
-    
 
-    removeButton.addEventListener('click', () => {
-        inputItem.remove();
-    }); 
+}
+
+function deleteHabit(e) {
+    let name = e.target.parentNode.children[3].innerText
+    loadInfo = loadInfo.filter(habit => {
+        return name !== habit.sessionComment
+    })
+    save()
+    e.target.parentNode.remove()
+    
+}
+
+function deleteInput(i) {
+    const inputItem = document.querySelector("li");
+    loadInfo.splice(i, 1);
+    localStorage.clear()
+
+    inputItem.remove();
+    save();
 }
 
 function moveProgressBar() {
@@ -88,8 +123,6 @@ function moveProgressBar() {
     progressBar.style.width = finalP + '%';
     progressBar.innerHTML = `${finalP}%`;
 }
-
-
 
 //Test to update innerHTML of text items - maybe make this into reCalc() function?
 function changeTextItems() {
