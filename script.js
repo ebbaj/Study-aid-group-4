@@ -31,7 +31,6 @@ form.addEventListener('submit', function(e) {
     e.preventDefault();
 });
 
-
 const submitBtn = document.getElementById('submitButton');
 
 submitBtn.addEventListener('click', getInputs) 
@@ -40,9 +39,10 @@ function getInputs(){
     let daysCount = document.querySelector('#days').value;
     let pageCount = document.querySelector('#pages').value;
     let bookTitle = document.querySelector('#book-title').value;
-    console.log(daysCount);
-    console.log(pageCount);
-    console.log(bookTitle);
+    localStorage.setItem('days', daysCount);
+    localStorage.setItem('pages', pageCount);
+    localStorage.setItem('book', bookTitle);
+    displayBook();
 }
 
 
@@ -78,11 +78,11 @@ function loadPreExisting() {
             removeButton.addEventListener('click', deleteHabit)
 
             inputItem.innerText = "Date: " + item.date + "\n" + "Activity: " + "\n" + "Amount: " +  item.sessionAmount + "\n" + "Learning: ";
-    list.appendChild(inputItem);
-    const comment = document.createElement('span')
-    console.log(comment)
-    comment.innerText =  item.sessionComment
-    inputItem.appendChild(comment)
+            list.appendChild(inputItem);
+            const comment = document.createElement('span')
+            console.log(comment)
+            comment.innerText =  item.sessionComment
+            inputItem.appendChild(comment)
 
             inputItem.appendChild(removeButton);
             
@@ -162,6 +162,8 @@ function moveProgressBar() {
     progressBar.innerHTML = `${finalP}%`;
 }
 
+moveProgressBar();
+
 //Test to update innerHTML of text items - maybe make this into reCalc() function?
 function changeTextItems() {
     let weeklyNumber = 50; //temporary values, will be based on userInput later on
@@ -170,4 +172,8 @@ function changeTextItems() {
     document.querySelector(".todaysGoal").innerHTML = "Read " + dailyNumber + " pages";
 }
 
-moveProgressBar();
+function displayBook() {
+    let book = localStorage.getItem('book');
+    document.querySelector(".current-book").innerHTML = `You're currently reading ${book}`;
+}
+
