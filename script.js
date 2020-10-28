@@ -46,6 +46,7 @@ function getInputs(){
     localStorage.setItem('days', daysCount);
     localStorage.setItem('pages', pageCount);
     localStorage.setItem('book', bookTitle);
+    localStorage.setItem('pagesLeft', 0);
     displayStoredGoal();
 }
 
@@ -90,7 +91,9 @@ function loadPreExisting() {
 
             inputItem.appendChild(removeButton);
             
-            moveProgressBar();   
+
+            // moveProgressBar();
+
 
         }
     }
@@ -133,8 +136,21 @@ function storeSession(event){
     let currentGoal = localStorage.getItem('pages');
     let recalculatedGoal = parseInt(currentGoal) - parseInt(sessionInfo.sessionAmount);
     localStorage.setItem("pagesLeft", recalculatedGoal);
+
+    let pagesLeft = localStorage.getItem('pagesLeft');
+
     
+    if (parseInt(pagesLeft) === 0 || pagesLeft === "0") {
+        let currentGoal = localStorage.getItem('pages');
+        let recalculatedGoal = parseInt(currentGoal) - parseInt(sessionInfo.sessionAmount);
+        localStorage.setItem("pagesLeft", recalculatedGoal);
+    } else {
+        let recalculatedGoal = parseInt(pagesLeft) - parseInt(sessionInfo.sessionAmount);
+        localStorage.setItem("pagesLeft", recalculatedGoal);
+    }
+
     displayStoredGoal();
+    moveProgressBar();
 }
 
 function deleteHabit(e) {
@@ -157,18 +173,26 @@ function deleteInput(i) {
 }
 
 function moveProgressBar() {
-    //Variables - userGoal and userInput are temporary variables to test the progress bar
-    let userGoal = 100;
-    let userInput = 80; /* 55-58 gets decimals, fix this bug */
+    let totalPages = localStorage.getItem('pages');
+    let recalculPages = localStorage.getItem('pagesLeft');
+    let progress = parseInt(recalculPages) / parseInt(totalPages);
+    let finalP = Math.round(progress * 100);
+    if (finalP === 0 ) {
+        console.log(finalP)
+        progressBar.innerHTML = `0%`;
 
-    let progress = userInput / userGoal;
-    let finalP = progress * 100;
+    } else if (finalP < 5 ) {
+            console.log(finalP)
+            progressBar.innerHTML = `${finalP}%`;
+    } else {
+    console.log(progress)
+    console.log(finalP)
     progressBar.style.width = finalP + '%';
     progressBar.innerHTML = `${finalP}%`;
+    }
 }
 
 moveProgressBar();
-
 
 function displayStoredGoal() {
     let book = localStorage.getItem('book');
@@ -190,10 +214,12 @@ function displayStoredGoal() {
     }
 
     let pagesLeft = localStorage.getItem('pagesLeft')
-    if (pagesLeft) {
+        if (book === undefined || book === null || book === '') {
+         document.querySelector(".pages-left").innerHTML = " ";
+        } else if (pagesLeft === 0 || pagesLeft === "0") {
+        document.querySelector(".pages-left").innerHTML = "You have " + parseInt(totalPages) + " pages left to finish your book.";
+         } else {
         document.querySelector(".pages-left").innerHTML = "You have " + parseInt(pagesLeft) + " pages left to finish your book.";
-    }
+         }
+    moveProgressBar();
 }
-
-
-
