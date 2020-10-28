@@ -86,21 +86,22 @@ function loadPreExisting() {
             // Added this for readibility >Omid
             const datePara = document.createElement('span');
             datePara.className = "learning-date";
-            datePara.textContent = "Date: " + item.date;
+            datePara.textContent = "Date: " + item.date + "\n";
 
             const pagesPara = document.createElement('span');
             pagesPara.className = "learning-pages";
-            pagesPara.textContent = item.sessionAmount + " pages";
+            pagesPara.textContent = item.sessionAmount + " pages" + "\n";
 
             list.appendChild(inputItem);
             const comment = document.createElement('span')
             comment.className = "learning-comment";
-            comment.textContent = "Today I learned that " + "\n" + item.sessionComment;
+            comment.textContent = item.sessionComment + "\n";
             console.log(comment)
 
             inputItem.appendChild(datePara);
-            inputItem.appendChild(comment);
             inputItem.appendChild(pagesPara);
+            inputItem.appendChild(comment);
+            
 
             inputItem.appendChild(removeButton);
             
@@ -147,6 +148,10 @@ function storeSession(event){
 
     //changeTextItems();
     moveProgressBar();
+
+    let currentGoal = localStorage.getItem('pages');
+    let recalculatedGoal = parseInt(currentGoal) - parseInt(sessionInfo.sessionAmount);
+    localStorage.setItem("pagesLeft", recalculatedGoal);
 
 }
 
@@ -204,10 +209,10 @@ function displayStoredGoal() {
     let calculatedGoal = parseInt(totalPages) / parseInt(totalDays);
 
     if (totalPages === undefined || totalPages === null || totalPages === '' && totalDays === undefined || totalDays === null || totalDays === '') {
-     document.querySelector(".calculated-goal").innerHTML = `We are missing information about either days or pages. Please go back and add those in "Start a book"`;
+     document.querySelector(".calculated-goal").innerHTML = `We are missing information about either days or pages. Please go back and add those in "Start a book".`;
     } else {
         // Keep the parseInt(calculatedGoal) here otherwise it will show the precise claculation like 345 / 34 = 10.147058823529411
-        document.querySelector(".calculated-goal").innerHTML = "To meet you goal you need to read approximately " + parseInt(calculatedGoal) + " pages everyday.";
+        document.querySelector(".calculated-goal").innerHTML = "To meet you goal you need to read " + parseInt(calculatedGoal) + " pages everyday.";
     }
 
 }
